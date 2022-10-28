@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["Node","The Node struct is the building block of a blok. I.e., it holds styles corresponding to a part of a text."]]};

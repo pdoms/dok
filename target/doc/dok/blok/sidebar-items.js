@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":[["Blok","A struct that represents the data structure of a blok, which holds a `Vec` of `Node`s. It thus represents unit of content, which can be any of the `BlokType`s. e.g., a Paragraph, or a table cell."]]};

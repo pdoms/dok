@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":[["BlokType","Blok Types"]],"mod":[["blok",""],["node",""],["nodestyle",""]],"struct":[["Dok","A data structure that holds data for a whole document."],["MetaDataItem","Utility struct to define one metadata item, as key value pair."]],"type":[["MetaData","The MetaData type holds data describing the given blok or gibven node."]]};

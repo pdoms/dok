@@ -5,6 +5,7 @@ pub mod blok;
 pub mod node;
 pub mod section;
 pub mod style;
+pub mod metadata;
 mod utils;
 
 

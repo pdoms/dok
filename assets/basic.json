@@ -28,9 +28,11 @@
                                     "text": "Hello World",
                                     "style": {
                                         "fontSize": 12.0
-                                    }
+                                    },
+                                    "metadata": {}
                                 }
-                            ]
+                            ],
+                            "metadata": {}
                         }
                     ]
                 }

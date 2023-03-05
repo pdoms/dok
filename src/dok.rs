@@ -26,12 +26,14 @@ impl Dok {
 
 #[cfg(test)]
 mod tests {
+
     use super::*;
     use crate::node::Node;
     use crate::blok::{BlokType, Blok};
     use crate::page::{PageType, PageSizes};
     use crate::section::{Section, SectionId};
     use crate::style::{Styles, Style};
+    use crate::metadata::Metadata;
 
     #[test]
     fn json_loader() {
@@ -69,9 +71,11 @@ mod tests {
                                                 Node {
                                                     id: "par_1_node_1".to_string(),
                                                     text: "Hello World".to_string(),
-                                                    style: node_style
+                                                    style: node_style,
+                                                    metadata: Metadata::new()
                                                 }
-                                            ]
+                                            ],
+                                            metadata: Metadata::new()
                                             
                                         }
                                     }

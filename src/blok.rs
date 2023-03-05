@@ -1,4 +1,6 @@
+
 use serde::Deserialize;
+use crate::metadata::Metadata;
 use crate::node::Node; 
 use crate::style::{de_style, Styles};
 
@@ -13,5 +15,6 @@ pub struct Blok {
     pub id: String,
     pub content: Vec<Node>,
     #[serde(deserialize_with = "de_style")]
-    pub style: Styles
+    pub style: Styles,
+    pub metadata: Metadata 
 }

@@ -1,0 +1,24 @@
+{
+    "pages": [
+        {
+            "page_type": "Running",
+            "size": "A4",
+            "number": 1,
+            "margins": [72.0, 72.0, 54.0, 72.0],
+            "sections": [
+                {
+                    "id": "Main",
+                    "root_x": 72.0,
+                    "root_y": 72.0,
+                    "width":  452.0,
+                    "height": 698.0,
+                    "content": [
+                        {
+                            "blok_type": "Paragraph"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

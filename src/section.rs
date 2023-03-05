@@ -1,8 +1,9 @@
-use crate::utils::{Locality, Width, Height};
+use crate::utils::{Width, Height, Locality, Coord};
 use crate::blok::Blok;
+use serde::Deserialize;
 
 
-
+#[derive(Deserialize, Debug)]
 pub enum SectionId {
     Head,
     Right,
@@ -24,13 +25,14 @@ impl SectionId {
     }
 }
 
+#[derive(Deserialize, Debug)]
 pub struct Section {
     id: SectionId,
-    root_x: Locality,
-    root_y: Locality,
+    root_x: Coord,
+    root_y: Coord,
     width: Width, 
     height: Height, 
-    content: Vec<Blok>
+    //content: Vec<Blok>
 }
 
 

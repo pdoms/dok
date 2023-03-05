@@ -1,13 +1,15 @@
 use crate::section::Section;
 use crate::utils::{Width, Height, Locality};
-use crate::style::Styles;
+use serde::Deserialize;
 
 
+#[derive(Deserialize, Debug)]
 pub enum PageType {
     Template(u32),
     Running 
 }
 
+#[derive(Deserialize, Debug)]
 pub enum PageSizes {
     A4
 }
@@ -22,14 +24,14 @@ impl PageSizes {
 
 
 //TRBL
-type PageMargins = (Locality, Locality, Locality, Locality);
-
+type PageMargins = [f32; 4];
+#[derive(Deserialize, Debug)]
 pub struct Page {
-    page_size: PageSizes,
     page_type: PageType,
+    size: PageSizes,
+    number: Option<u32>,
     margins: PageMargins,
     sections: Vec<Section>,
-    styles: Styles
 }
 
 

@@ -1,20 +1,36 @@
 {
+    "title": "base",
     "pages": [
         {
-            "page_type": "Running",
+            "page_type": "running",
             "size": "A4",
             "number": 1,
             "margins": [72.0, 72.0, 54.0, 72.0],
+            "style": {},
             "sections": [
                 {
-                    "id": "Main",
+                    "id": "main",
                     "root_x": 72.0,
                     "root_y": 72.0,
                     "width":  452.0,
                     "height": 698.0,
+                    "style": {},
                     "content": [
                         {
-                            "blok_type": "Paragraph"
+                            "id": "par_1",
+                            "blok_type": "Paragraph",
+                            "style": {
+                                "align": "left"
+                            },
+                            "content": [
+                                {
+                                    "id": "par_1_node_1",
+                                    "text": "Hello World",
+                                    "style": {
+                                        "fontSize": 12.0
+                                    }
+                                }
+                            ]
                         }
                     ]
                 }

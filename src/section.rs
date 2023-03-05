@@ -1,9 +1,11 @@
+use crate::style::{de_style, Styles};
 use crate::utils::{Width, Height, Locality, Coord};
 use crate::blok::Blok;
 use serde::Deserialize;
 
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize, Debug, Clone, PartialEq)]
+#[serde(rename_all="camelCase")]
 pub enum SectionId {
     Head,
     Right,
@@ -25,14 +27,16 @@ impl SectionId {
     }
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize, Debug, Clone, PartialEq)]
 pub struct Section {
-    id: SectionId,
-    root_x: Coord,
-    root_y: Coord,
-    width: Width, 
-    height: Height, 
-    //content: Vec<Blok>
+    pub id: SectionId,
+    pub root_x: Coord,
+    pub root_y: Coord,
+    pub width: Width, 
+    pub height: Height, 
+    pub content: Vec<Blok>,
+    #[serde(deserialize_with="de_style")]
+    pub style: Styles
 }
 
 

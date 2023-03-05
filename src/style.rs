@@ -1,4 +1,4 @@
-use serde::{de::{self, Visitor, Expected}, Deserialize, Deserializer};
+use serde::{de::{self, Visitor}, Deserialize, Deserializer};
 use serde_json::Value;
 use std::{marker::PhantomData, fmt::Debug};
 
@@ -6,19 +6,15 @@ use std::{marker::PhantomData, fmt::Debug};
 
 #[derive(Debug, Clone, PartialEq, Deserialize)]
 #[serde(rename_all="camelCase")]
-enum Style {
+pub enum Style {
     FontSize(f64),
     Bold(bool),
     Align(String)
 }
 
-type Styles = std::collections::HashMap<String, Style>;
+pub type Styles = std::collections::HashMap<String, Style>;
 
-
-
-
-
-fn de_style<'de, D>(deserializer: D) -> Result<Styles, D::Error>
+pub fn de_style<'de, D>(deserializer: D) -> Result<Styles, D::Error>
     where 
         D: Deserializer<'de>,
 { 
@@ -53,8 +49,8 @@ fn de_style<'de, D>(deserializer: D) -> Result<Styles, D::Error>
                 D: de::MapAccess<'de>, 
             {
                 let mut map: Styles = std::collections::HashMap::with_capacity(access.size_hint().unwrap_or(0));
-                while let Some((key, value)) = access.next_entry::<&str, Value>()? {
-                    match key {
+                while let Some((key, value)) = access.next_entry::<String, Value>()? {
+                    match key.as_str() {
                         "fontSize" => {
                             if let Some(v) = value.as_f64() {
                                 map.insert(key.to_string(), Style::FontSize(v));
